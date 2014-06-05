@@ -1,0 +1,93 @@
+<install version="1.5" type="plugin" group="editors">
+	<name>Editor - JoomlaCK</name>
+	<version>5.2 Stable</version>
+	<creationDate>27 July 2012 </creationDate>
+	<author>WebxSolution Ltd</author>
+	<authorurl>http://www.webxsolution.com</authorurl>
+	<license>GPL</license>
+	<description>Welcome to the next-generation of internet based editors. The JCK Editors performance is truly amazing, thanks to its plug-n-play state-of-the-art API engine and is much more than an Out-of-the-Box installation of the CKEditor. Weve been under the hood and Joomla-ised its logic into a seamless and extendable integration.  Users can now customise the editor from the largest growing extension base of all Joomla editors, choose what tool-bars, setup user permissions, create and edit the editors own typography style-sheet and configure the editor for real-time editing! And whats more - when you have created your bespoke configuration you can now export your setting via the all new JCK Manager component!
+
+		<![CDATA[<a id="jckmodal-install" href="../plugins/editors/jckeditor/install/index.php" rel="{handler: 'iframe' , size: {x:571, y:400}}" title="test" style="visibility:hidden">test</a>
+		<style type="text/css">
+			#sbox-btn-close { display:none;}
+			#sbox-window{ background-color : #000000;}
+		</style>
+		<script type="text/javascript">
+		if (typeof SqueezeBox == "undefined") 
+		{
+				 var head = document.getElementsByTagName('head')[0];
+				 var link = document.createElement('link');
+			 	 link.type = 'text/css';
+				 link.rel = 'stylesheet';
+				 link.href = '../media/system/css/modal.css';
+				 head.appendChild(link);
+				
+				var script = document.createElement('script');
+				script.type= 'text/javascript';
+				script.src= '../media/system/js/modal.js';
+				head.appendChild(script);
+			
+			if(script && script.onreadystatechange)
+			{
+				script.onreadystatechange = function() 
+				{
+				   if (this.readyState == 'complete')
+				   {
+						if($$('#system-message dd.error ul').length < 1) //check to see if there are no errors reported
+						{
+							var wizard = document.getElementById("jckmodal-install");
+							SqueezeBox.fromElement(wizard,	{ parse: 'rel'});
+							(function()
+							{
+								SqueezeBox.bound  &&  SqueezeBox.overlay.removeEvent('click',SqueezeBox.bound.close) || SqueezeBox.overlay.removeEvent('click',SqueezeBox.listeners.close);
+							}).delay(250);	
+						}	
+				   }	
+				};
+			}
+			else
+			{
+				if(script)
+				{		
+					script.onload =  function()
+					{
+						
+						if($$('#system-message dd.error ul').length < 1) //check to see if there are no errors reported
+						{
+							var wizard = document.getElementById("jckmodal-install");
+							SqueezeBox.fromElement(wizard,	{ parse: 'rel'});
+							(function()
+							{
+								SqueezeBox.bound  &&  SqueezeBox.overlay.removeEvent('click',SqueezeBox.bound.close) || SqueezeBox.overlay.removeEvent('click',SqueezeBox.listeners.close);
+							}).delay(250);	
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			if($$('#system-message dd.error ul').length < 1) //check to see if there are no errors reported
+				{
+					var wizard = document.getElementById("jckmodal-install");
+					SqueezeBox.fromElement(wizard,	{ parse: 'rel'});
+					(function()
+					{
+						SqueezeBox.bound  &&  SqueezeBox.overlay.removeEvent('click',SqueezeBox.bound.close) || SqueezeBox.overlay.removeEvent('click',SqueezeBox.listeners.close);
+					}).delay(250);	
+				}
+		}	
+		</script>]]>
+	</description>
+	<files>
+		<filename plugin="jckeditor">jckeditor.php</filename>
+		<filename>jckeditor.xml</filename>
+		<folder>jckeditor</folder>
+	</files>
+	<languages>
+	<language tag="en-GB">language/en-GB/en-GB.plg_editors_jckeditor.ini</language>
+	</languages>
+	
+<scriptfile>install.php</scriptfile>	
+	
+</install>
