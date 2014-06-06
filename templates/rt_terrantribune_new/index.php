@@ -1,11 +1,19 @@
 <?php
-// no direct access
-defined( '_JEXEC' ) or die( 'Restricted index access' );
-define( 'YOURBASEPATH', dirname(__FILE__) );
-require( YOURBASEPATH.DS."rt_styleswitcher.php");
-JHTML::_('behavior.framework', true);
-JHTML::_( 'behavior.mootools' );
+/**
+ * @package		Joomla.Site
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
 
+defined('_JEXEC') or die;
+define( 'YOURBASEPATH', dirname(__FILE__) );
+//require( YOURBASEPATH.DS."rt_styleswitcher.php");
+
+/* The following line loads the MooTools JavaScript Library */
+JHtml::_('behavior.framework', true);
+//JHTML::_( 'behavior.mootools' );
+
+/* The following line gets the application object for things like displaying the site name */
 $app = JFactory::getApplication();
 
 	$live_site        			= $app->getCfg('live_site');
@@ -34,21 +42,24 @@ $app = JFactory::getApplication();
 	$moo_fps          			= $this->params->get("moo_fps", "200");
 	$moo_transition   			= $this->params->get("moo_transition", "Sine.easeOut");	
 	
-	require(YOURBASEPATH . DS . "rt_styleloader.php");
+	//require(YOURBASEPATH . DS . "rt_styleloader.php");
 	$app->set('mcolors', explode(',',$menu_colors));
 	$app->set('default_color', $default_color);
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
+<?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>" >
 	<head>
+		<!-- The following JDOC Head tag loads all the header and meta information from your site config and content. -->
 		<jdoc:include type="head" />
-		<?php
-		require(YOURBASEPATH . DS . "rt_utils.php");
-		require(YOURBASEPATH . DS . "rt_head_includes.php");
+
+	<?php
+		//require( YOURBASEPATH.DS."rt_utils.php");
+		require( YOURBASEPATH.DS."rt_head_includes.php");
 
 	?>
-<script type="text/javascript">
+	<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-32656672-1']);
@@ -62,7 +73,7 @@ $app = JFactory::getApplication();
 
 </script>
 	</head>
-	<body id="ff-<?php echo $fontfamily; ?>" class="<?php echo $fontstyle; ?> bc-<?php echo $menu_color; ?> iehandle">
+	<body>
 		<div id="page-bg">
 		<!-- Begin Wrapper -->
 		<div class="wrapper">
@@ -390,5 +401,6 @@ $app = JFactory::getApplication();
 		</div>
 		<!-- End Wrapper -->
 		</div>
+
 	</body>
 </html>
