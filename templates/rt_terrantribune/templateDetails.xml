@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<extension version="2.5" type="template" method="upgrade">
+<extension version="2.5" type="template" method="upgrade" type="site">
     <name>rt_terrantribune</name>
     <version>2.5</version>
     <creationDate>06/30/08</creationDate>
@@ -44,6 +44,7 @@
     </description>
 	<files>
 		<filename>index.php</filename>
+		<filename>error.php</filename>
 		<filename>fields.ini</filename>
 		<filename>rt_styleloader.php</filename>
 		<filename>rt_styleswitcher.php</filename>
@@ -93,7 +94,8 @@
 		<position>debug</position>
 	</positions>
 	<config>
-		<fields name="fields">
+		<fields name="params">
+			<fieldset name="advanced">
 			<field name="defaultColor" type="list" default="blue" label="Default Color" description="Default Color Variation">
 				<option value="blue">Blue</option>
 				<option value="red">Red</option>
@@ -199,6 +201,7 @@
 			<option value="Elastic.easeIn">Elastic.easeIn</option>
 			<option value="Elastic.easeInOut">Elastic.easeInOut</option>
 		</field>
+		</fieldset>
     </fields>
 	</config>
 </extension>

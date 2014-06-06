@@ -1,12 +1,14 @@
 <?php
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted index access' );
-jimport('joomla.filesystem.file');
 define( 'YOURBASEPATH', dirname(__FILE__) );
 require( YOURBASEPATH.DS."rt_styleswitcher.php");
+JHTML::_('behavior.framework', true);
 JHTML::_( 'behavior.mootools' );
 
-	$live_site        			= $mainframe->getCfg('live_site');
+$app = JFactory::getApplication();
+
+	$live_site        			= $app->getCfg('live_site');
 	$template_path 				= $this->baseurl . '/templates/' .  $this->template;
 	$default_color 				= $this->params->get("defaultColor", "blue");
 	$menu_colors 				= $this->params->get("menuColors", "blue,green,red,grey,orange,purple,brown");
@@ -33,8 +35,8 @@ JHTML::_( 'behavior.mootools' );
 	$moo_transition   			= $this->params->get("moo_transition", "Sine.easeOut");	
 	
 	require(YOURBASEPATH . DS . "rt_styleloader.php");
-	$mainframe->set('mcolors', explode(',',$menu_colors));
-	$mainframe->set('default_color', $default_color);
+	$app->set('mcolors', explode(',',$menu_colors));
+	$app->set('default_color', $default_color);
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
