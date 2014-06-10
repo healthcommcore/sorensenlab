@@ -1,12 +1,18 @@
 <?php
 /**
- * @package		Joomla.Site
- * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @version $Id: modules.php 5556 2006-10-23 19:56:02Z Jinx $
+ * @package Joomla
+ * @copyright Copyright (C) 2005 - 2006 Open Source Matters. All rights reserved.
+ * @license GNU/GPL, see LICENSE.php
+ * Joomla! is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
+ * See COPYRIGHT.php for copyright notices and details.
  */
 
 // no direct access
-defined('_JEXEC') or die;
+defined('_JEXEC') or die('Restricted access');
 
 /**
  * This is a file to add template specific chrome to module rendering.  To use it you would
@@ -20,37 +26,36 @@ defined('_JEXEC') or die;
  *
  * NOTICE: All chrome wrapping methods should be named: modChrome_{STYLE} and take the same
  * two arguments.
- *
- * This module chrome file creates custom output for modules used with the Atomic template.
- * The first function wraps modules using the "container" style in a DIV. The second function
- * uses the "bottommodule" style to change the header on the bottom modules to H6. The third
- * function uses the "sidebar" style to change the header on the sidebar to H3.
  */
 
-function modChrome_container($module, &$params, &$attribs)
+/*
+ * Module chrome for rendering the module in a slider
+ */
+function modChrome_submenu($module, &$params, &$attribs)
 {
-	if (!empty ($module->content)) : ?>
-		<div class="container">
-			<?php echo $module->content; ?>
-		</div>
-	<?php endif;
-}
-function modChrome_bottommodule($module, &$params, &$attribs)
-{
-	if (!empty ($module->content)) : ?>
-		<?php if ($module->showtitle) : ?>
-			<h6><?php echo $module->title; ?></h6>
-		<?php endif; ?>
-		<?php echo $module->content; ?>
-	<?php endif;
-}
-function modChrome_sidebar($module, &$params, &$attribs)
-{
-	if (!empty ($module->content)) : ?>
-		<?php if ($module->showtitle) : ?>
-			<h3><?php echo $module->title; ?></h3>
-		<?php endif; ?>
-		<?php echo $module->content; ?>
-	<?php endif;
+  global $Itemid;
+  
+  $start  = $params->get('startLevel');
+  
+  $tabmenu = &JMenu::getMenu();
+  $item = $tabmenu->getItem($Itemid);
+  
+  if (isset($item)) {
+    $tparent = $tabmenu->getItem($item->parent);
+      if (isset($tparent->parent)) {
+        while ($tparent->parent != 0) {
+          if ($item->sublevel == $start-1) break;
+          $item = $tabmenu->getItem($item->parent);
+        $tparent = $tabmenu->getItem($item->parent);
+        }
+        if (!empty ($module->content) && strlen($module->content) > 40) { ?>
+          <div class="module-menu"><div><div><div>
+            <h3><?php echo $item->name; ?> Menu</h3>
+            <?php echo $module->content; ?>
+          </div></div></div></div>
+        <?php 
+        }
+      }
+  }
 }
 ?>

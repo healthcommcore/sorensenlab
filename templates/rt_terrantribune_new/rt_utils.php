@@ -3,7 +3,6 @@ defined( '_JEXEC' ) or die( 'Restricted index access' );
 
 global $Itemid, $modules_list;
 $menu_color = $default_color;
-
 if ($mtype!="module") :
 	// menu code
 	$document	= &JFactory::getDocument();
@@ -31,7 +30,7 @@ if ($mtype!="module") :
 endif;
 
 // start color stuff
-$menu = &JSite::getMenu();
+$menu = &JMenu::getMenu();
 
 
 

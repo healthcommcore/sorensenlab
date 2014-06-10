@@ -55,6 +55,6 @@ class JConfig {
 	public $feed_limit = '10';
 	public $log_path = '/Users/DesignProdn/Sites/sorensenlab.org/logs';
 	public $tmp_path = '/Users/DesignProdn/Sites/sorensenlab.org/tmp';
-	public $lifetime = '15';
+	public $lifetime = '90';
 	public $session_handler = 'database';
 }

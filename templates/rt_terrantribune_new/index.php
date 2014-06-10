@@ -46,6 +46,8 @@ $app = JFactory::getApplication();
 	$app->set('mcolors', explode(',',$menu_colors));
 	$app->set('default_color', $default_color);
 
+	echo $live_site;
+
 ?>
 <?php echo '<?'; ?>xml version="1.0" encoding="<?php echo $this->_charset ?>"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -55,7 +57,8 @@ $app = JFactory::getApplication();
 		<jdoc:include type="head" />
 
 	<?php
-		//require( YOURBASEPATH.DS."rt_utils.php");
+		require( YOURBASEPATH.DS."rt_styleloader.php");
+		require( YOURBASEPATH.DS."rt_utils.php");
 		require( YOURBASEPATH.DS."rt_head_includes.php");
 
 	?>
