@@ -10,15 +10,21 @@ if($db->connect_errno) {
 }
 
 if(isset($_GET['name']) && isset($_GET['institution']) && isset($_GET['country'])) {
-	$name = $_GET['name'];
-	$inst = $_GET['institution'];
-	$country = $_GET['country'];
+	$name = $db->real_escape_string($_GET['name']);
+	$inst = $db->real_escape_string($_GET['institution']);
+	$country = $db->real_escape_string($_GET['country']);
 
 //	echo "<p>$name<br />$inst<br />$country</p>";
-	$db->query("INSERT INTO " . TABLE . " (date, name, institution, country) " .
-	 "VALUES (" . CURRENT_TIMESTAMP . ",'" . $name . "','" . $inst . "','" . $country . "')");
+	if(!$stmt = $db->prepare("INSERT INTO " . TABLE . " (date, name, institution, country) " .
+	 "VALUES (" . CURRENT_TIMESTAMP . ",'" . $name . "','" . $inst . "','" . $country . "')")){
+		 echo "Prepare failed: (" . $db->errno . ") " . $db->error;
+	 }
 
+	$date = CURRENT_TIMESTAMP;
+	$stmt->bind_param('ssss', $date, $name, $inst, $country);
+
+	if(!$stmt->execute()){
+		 echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+	 }
 }
-/*
- */
 ?>

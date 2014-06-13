@@ -53,8 +53,8 @@ class JConfig {
 	public $sef_suffix = '0';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/Users/DesignProdn/Sites/sorensenlab.org/logs';
-	public $tmp_path = '/Users/DesignProdn/Sites/sorensenlab.org/tmp';
+	public $log_path = '/var/www/html/sorensenlab.org/logs';
+	public $tmp_path = '/var/www/html/sorensenlab.org/tmp';
 	public $lifetime = '90';
 	public $session_handler = 'database';
 }

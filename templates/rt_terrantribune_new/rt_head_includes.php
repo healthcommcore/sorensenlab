@@ -32,9 +32,10 @@
 <link href="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template?>/css/template_ie6.php" rel="stylesheet" type="text/css" />
 <![endif]-->
 <?php endif; ?>
+<link href="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template?>/bsts/bsts.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">jQuery.noConflict();</script>
-<script type="text/javascript" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template?>/js/bsts.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template?>/bsts/bsts.js"></script>
 <script type="text/javascript" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template?>/js/rokutils.js"></script>
 <?php if (rok_isIe6()) : ?>
 <script type="text/javascript" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template?>/js/rokiefix.js"></script>

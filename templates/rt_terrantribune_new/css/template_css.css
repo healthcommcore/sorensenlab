@@ -69,6 +69,16 @@ tr.sectiontableentry1 td, td.sectiontableentry1 {height: 27px;background: #f7f7f
 
 #main-section a:hover {color: #333;}
 
+.article-border{
+	padding:10px 12px;
+	border:#e6e6e6 1px solid;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius:10px;
+}
+
+.custom-ad{}
+
 .shadow-left {
 	padding-left: 12px;
 	background: url(../images/shadow-l.png) 0 35px no-repeat;
@@ -737,9 +747,9 @@ ul#horiznav.menutop, #horiz-menu ul.menutop {
 
 a.mainlevel:hover, a.sublevel:hover {text-decoration: none;}
 ul.menu {margin: 0 0 15px 0;padding: 0;}
-ul.menu li {list-style: none;margin: 0;padding: 0;float: none;}
+ul.menu li {list-style: none;margin0px;padding: 0;float: none;}
 ul.menu span {display: block;height: 24px;}
-ul.menu a, ul.menu li.active a, a.mainlevel {display: block;line-height: 24px;text-indent: 10px;height: 24px;overflow: hidden;font-size: 110%;float: none;background: url(../images/readon.png) 0 8px no-repeat;}
+/*ul.menu a, ul.menu li.active a, a.mainlevel {display: block;line-height: 24px;text-indent: 10px;height: 24px;overflow: hidden;font-size: 110%;float: none;background: url(../images/readon.png) 0 8px no-repeat;}*/
 a.sublevel {background: url(../images/readon.png) 0 4px no-repeat;padding-left: 10px;margin-left: 0;}
 ul.menu li.active a, ul.menu li.active li.active a, a#active_menu.mainlevel, a#active_menu.sublevel {font-weight: bold;}
 ul.menu li.active li a {font-weight: normal;}
@@ -751,9 +761,10 @@ ul.menu ul {margin: 5px -15px; padding: 10px 0 10px 30px;}
 ul.menu ul ul {padding: 0; margin-left: 20px; background: none;}
 ul.menu li li {padding: 0;margin: 0;}
 ul.menu ul a {text-indent: 0;}
-ul.menu li.active a, ul.menu li.active a:hover {text-decoration: none; line-height: 24px;}
+ul.menu li.active a, ul.menu li.active a:hover {text-decoration: none;}
 ul.menu li a:hover {text-decoration: none;}
 ul.menu li.active ul {margin-top: 0;margin-bottom: 0;padding-top: 5px;padding-bottom: 5px;}
+#left-column .module ul.menu li{margin-bottom:10px; font-size:110%;}
 
 /* @end */
 
@@ -894,3 +905,4 @@ div.copyright {
 .warning{padding:0 14px; margin:5px 0; background:#FFF0F0; border:#FF7D7D 2px solid; color:#D61313; font-size:1.2em;}
 .language{display:inline-block; padding:5px 10px 7px 10px; background:#ddd; border:#999 1px solid; margin-bottom:10px;}
 .testing{display:none;}
+.standout{background:#fffde6; border:2px solid #ffd92e; color:#a3570b; font-style:italic; padding:10px 12px;}

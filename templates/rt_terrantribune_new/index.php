@@ -76,7 +76,7 @@ $app = JFactory::getApplication();
 
 </script>
 	</head>
-	<body>
+	<body id="ff-helvetica" class="bc-blue">
 		<div id="page-bg">
 		<!-- Begin Wrapper -->
 		<div class="wrapper">
@@ -181,7 +181,7 @@ $app = JFactory::getApplication();
 														<div id="leftmodules" class="spacer<?php echo $leftmods_width; ?>">
 															<?php if ($this->countModules('left2')) : ?>
 																<div class="block">
-																	<jdoc:include type="modules" name="left2" style="rounded" />
+																	<jdoc:include type="modules" name="left2" style="xhtml" />
 																</div>
 															<?php endif; ?>
 															<?php if ($this->countModules('left3')) : ?>
@@ -219,12 +219,12 @@ $app = JFactory::getApplication();
 														<div id="rightmodules" class="spacer<?php echo $rightmods_width; ?>">
 															<?php if ($this->countModules('right2')) : ?>
 																<div class="block">
-																	<jdoc:include type="modules" name="right2" style="rounded" />
+																	<jdoc:include type="modules" name="right2" style="xhtml" />
 																</div>
 															<?php endif; ?>
 															<?php if ($this->countModules('right3')) : ?>
 																<div class="block">
-																	<jdoc:include type="modules" name="right3" style="rounded" />
+																	<jdoc:include type="modules" name="right3" style="xhtml" />
 																</div>
 															<?php endif; ?>
 														</div>
@@ -233,7 +233,7 @@ $app = JFactory::getApplication();
 																<?php echo $sidenav; ?>
 															</div>
 														<?php endif; ?>
-														<jdoc:include type="modules" name="right" style="rounded" />
+														<jdoc:include type="modules" name="right" style="xhtml" />
 														<div id="rightmodules2" class="spacer<?php echo $rightmods2_width; ?>">
 															<?php if ($this->countModules('right4')) : ?>
 																<div class="block">
