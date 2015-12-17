@@ -7,7 +7,7 @@
 	 var warning = $('#warning');
 	 var content = $('#agreement_content');
 	 var terms = $('#accept_terms');
-	 var path = '/sorensenlab.org/templates/rt_terrantribune_new/bsts/terms.html #';
+	 var path = '/templates/rt_terrantribune_new/bsts/terms.html #';
 	 var language;
 			 
 	 // Reorganize overlay divs
